@@ -24,3 +24,40 @@ For this project, you will use the Integrated Development Environment (IDE) link
 If you need additional support, please navigate to the course page and reach out to your course instructor.
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+________________________________________________________________________________________________________________________
+## REQUIREMENTS 
+
+## PART_A_PROMPT:
+(A.  Create your subgroup and project by logging into GitLab using the web link provided and using the “GitLab How-To” web link, and do the following:
+
+•  Clone the project to the IDE.
+
+•  Commit with a message and push when you complete each of the tasks listed below (e.g., parts C to J).
+
+
+Note: You may commit and push whenever you want to back up your changes, even if a task is not complete.
+
+
+•  Submit a copy of the Git repository URL and a copy of the repository branch history retrieved from your repository, which must include the commit messages and dates.
+
+
+Note: Wait until you have completed all the following prompts before you create your copy of the repository branch history.)
+## PART_A_NOTES:
+
+## PART_B_PROMPT:
+(Create a README file that includes notes describing where in the code to find the changes you made for each of parts C 
+to J. Each note should include the prompt, file name, line number, and change.)
+
+## PART_B_NOTES:
+1/4/24 - The project README was updated to include the requirements listed in part B. 
+Lines 27+ will consist of the requirements.
+
+## PART_C_PROMPT:
+(C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+
+
+Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.)
+
+## PART_C_NOTES:
+1/4/2024 - mainscreen.html was altered to reflect the chose company name. 
+Lines 14, 18, 21, 45 were changed. 
