@@ -61,3 +61,12 @@ Note: Do not remove any elements that were included in the screen. You may add a
 ## PART_C_NOTES:
 1/4/2024 - mainscreen.html was altered to reflect the chose company name. 
 Lines 14, 18, 21, 45 were changed. 
+
+## PART_D_PROMPT:
+(D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include 
+navigation to and from the “About” page and the main screen.)
+
+# PART_D_NOTES:
+Generated images using DALLE for our products. Placed them in resources/static/images. 
+Created a controller for the about page titled AboutController in java/controllers/AboutController.
+Altered MainScreenController to include a GetMapping on /about on lines 54 - 57.
