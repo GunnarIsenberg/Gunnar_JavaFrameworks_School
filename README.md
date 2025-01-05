@@ -70,3 +70,15 @@ navigation to and from the “About” page and the main screen.)
 Generated images using DALLE for our products. Placed them in resources/static/images. 
 Created a controller for the about page titled AboutController in java/controllers/AboutController.
 Altered MainScreenController to include a GetMapping on /about on lines 54 - 57.
+
+## PART_E_PROMPT:
+(E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five
+products in your sample inventory and should not overwrite existing data in the database.
+
+
+Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the 
+sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your 
+products. When duplicate items are added, make a “multi-pack” part.)
+
+## PART_E_NOTES:
+Generated a list of items (computer components), and products that are made of the components (full systems). 
