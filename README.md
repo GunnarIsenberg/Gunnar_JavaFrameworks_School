@@ -82,3 +82,20 @@ products. When duplicate items are added, make a “multi-pack” part.)
 
 ## PART_E_NOTES:
 Generated a list of items (computer components), and products that are made of the components (full systems). 
+
+## PART_F_PROMPT:
+(F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+•  The “Buy Now” button must be next to the buttons that update and delete products.
+•  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the
+associated parts.
+•  Display a message that indicates the success or failure of a purchase.)
+
+## PART_F_NOTES:
+Created HTML files for a successful and unsuccessful purchase based on weather there was a sufficient number of products
+available. /resources/templates/notavailable.html and buynow.html. 
+
+Added buttons to each product dynamically using thymeleaf, this change is in mainscreen.html on lines 86 / 87.
+
+Added a get mapping for "/buynow" to the button in /java/controller/MainScreenController. This checks if there are
+more than 0 products, and routes to the correct page. If there is atleast one product in stock it decrements the product 
+by one using the part service. 
