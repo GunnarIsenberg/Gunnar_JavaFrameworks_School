@@ -104,3 +104,21 @@ Added buttons to each product dynamically using thymeleaf, this change is in mai
 Added a get mapping for "/buynow" to the button in /java/controller/MainScreenController. This checks if there are
 more than 0 products, and routes to the correct page. If there is atleast one product in stock it decrements the product 
 by one using the part service. 
+
+## PART_G_PROMPT:
+(Modify the parts to track maximum and minimum inventory by doing the following:
+•  Add additional fields to the part entity for maximum and minimum inventory.
+•  Modify the sample inventory to include the maximum and minimum fields.
+•  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+•  Rename the file the persistent storage is saved to.
+•  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+)
+
+## PART_G_NOTES:
+Updated the part object with getters, setters, a changed the constructor to include max and min inventory, and added the
+requested properties. Part.java lines 32-36, 57-65, 107-119
+Added the properties to the display on the main menu, mainscreen.html lines 86 & 87.
+Added values to the inhouse and outsources part forms. Lines 24-32 for both.
+Line 6 in application.properties to rename the storage file. 
+Added a handled exception for setting the inv value on a product - now if the value input is not in the min or max range 
+it throws an error. 
