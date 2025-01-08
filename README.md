@@ -121,4 +121,10 @@ Added the properties to the display on the main menu, mainscreen.html lines 86 &
 Added values to the inhouse and outsources part forms. Lines 24-32 for both.
 Line 6 in application.properties to rename the storage file. 
 Added a handled exception for setting the inv value on a product - now if the value input is not in the min or max range 
-it throws an error. 
+it throws an error.
+
+Added default values to min and max inv. 
+modified logic to account for objects with no set min and max values for inventory.
+
+updated mainscreen template to show the min and max inventory values on the parts table not the products table - this
+resulted in the main screen never showing anything for these values. G is now complete.

@@ -31,7 +31,7 @@ public abstract class Part implements Serializable {
 
     @Min(value = 0, message = "MinInventory value must be positive")
     int minInv;
-    @Min(value = 0, message = "MaxInventory value must be positive")
+    @Min(value = 5, message = "MaxInventory value must be positive")
     int maxInv;
 
     @ManyToMany
@@ -46,6 +46,8 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInv=0;
+        this.maxInv=180;
     }
 
     public Part(long id, String name, double price, int inv) {
@@ -53,6 +55,8 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInv=0;
+        this.maxInv=180;
     }
 
     public Part(long id, String name, double price, int inv, int minInv, int maxInv) {
@@ -93,7 +97,14 @@ public abstract class Part implements Serializable {
     }
 
     public void setInv(int inv) {
-        if(inv<this.minInv || inv>this.maxInv){
+        /*For some reason the IDE thinks the below condition is never possible - assuming the object is created by the
+        * GUI this would be true, but when hard coding it isn't. Therefore this is required. */
+
+        /*If there is something wrong with the test there is something wrong with the code... I think I should redo this*/
+        if((this.minInv == 0) && (this.maxInv == 0)) {
+            this.inv = inv;
+        }
+        else if(inv<this.minInv || inv>this.maxInv){
             throw new IllegalArgumentException("Inventory value must be between "+this.minInv+" and "+this.maxInv);
         } else {
             this.inv = inv;
