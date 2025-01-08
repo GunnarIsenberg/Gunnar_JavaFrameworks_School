@@ -83,6 +83,11 @@ products. When duplicate items are added, make a “multi-pack” part.)
 ## PART_E_NOTES:
 Generated a list of items (computer components), and products that are made of the components (full systems). 
 
+Sent a second push after using the bootstrapdata file to manually create products and parts instead of via gui.'
+Also altered the database name for the new data. 
+Lines 46 - 228 for bootstrapdata
+Line 6 in application.properties 
+
 ## PART_F_PROMPT:
 (F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
