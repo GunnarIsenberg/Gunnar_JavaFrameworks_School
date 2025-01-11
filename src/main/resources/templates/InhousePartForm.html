@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Inhouse Part Detail</h1>
-<form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST"}>
+<form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST">
 
 <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
@@ -23,14 +23,20 @@
 
 <!--    THE BELOW TWO INPUTS ARE THE MIN AND MAX    -->
     <p><input type="text" path="minInv" th:field="*{minInv}" placeholder="MinInventory" class="form-control mb-4 col-4"/></p>
-    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{inv}">Inventory Error</p>
+    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Min Inventory Error</p>
 
     <p><input type="text" path="maxInv" th:field="*{maxInv}" placeholder="MaxInventory" class="form-control mb-4 col-4"/></p>
-    <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{inv}">Inventory Error</p>
+    <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Max Inventory Error</p>
 
 <!--THE ABOVE TWO INPUTS ARE MIN AND MAX    -->
 
     <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
+
+    <div th:if="${#fields.hasAnyErrors()}">
+        <ul>
+            <li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li>
+        </ul>
+    </div>
 
 <p><input type="submit" value="Submit" /></p>
 </form>

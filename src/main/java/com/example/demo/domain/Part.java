@@ -1,8 +1,10 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
+import com.example.demo.validators.ValidInventory;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -19,6 +21,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
+@ValidInventory
 public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -97,18 +100,7 @@ public abstract class Part implements Serializable {
     }
 
     public void setInv(int inv) {
-        /*For some reason the IDE thinks the below condition is never possible - assuming the object is created by the
-        * GUI this would be true, but when hard coding it isn't. Therefore this is required. */
-
-        /*If there is something wrong with the test there is something wrong with the code... I think I should redo this*/
-        if((this.minInv == 0) && (this.maxInv == 0)) {
-            this.inv = inv;
-        }
-        else if(inv<this.minInv || inv>this.maxInv){
-            throw new IllegalArgumentException("Inventory value must be between "+this.minInv+" and "+this.maxInv);
-        } else {
-            this.inv = inv;
-        }
+        this.inv = inv;
     }
 
     public Set<Product> getProducts() {
