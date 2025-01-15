@@ -54,8 +54,6 @@ Lines 27+ will consist of the requirements.
 
 ## PART_C_PROMPT:
 (C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
-
-
 Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.)
 
 ## PART_C_NOTES:
@@ -74,15 +72,12 @@ Altered MainScreenController to include a GetMapping on /about on lines 54 - 57.
 ## PART_E_PROMPT:
 (E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five
 products in your sample inventory and should not overwrite existing data in the database.
-
-
 Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the 
 sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your 
 products. When duplicate items are added, make a “multi-pack” part.)
 
 ## PART_E_NOTES:
-Generated a list of items (computer components), and products that are made of the components (full systems). 
-
+Generated a list of items (computer components), and products that are made of the components (full systems).
 Sent a second push after using the bootstrapdata file to manually create products and parts instead of via gui.'
 Also altered the database name for the new data. 
 Lines 46 - 228 for bootstrapdata
@@ -97,10 +92,8 @@ associated parts.
 
 ## PART_F_NOTES:
 Created HTML files for a successful and unsuccessful purchase based on weather there was a sufficient number of products
-available. /resources/templates/notavailable.html and buynow.html. 
-
+available. /resources/templates/notavailable.html and buynow.html.
 Added buttons to each product dynamically using thymeleaf, this change is in mainscreen.html on lines 86 / 87.
-
 Added a get mapping for "/buynow" to the button in /java/controller/MainScreenController. This checks if there are
 more than 0 products, and routes to the correct page. If there is atleast one product in stock it decrements the product 
 by one using the part service. 
@@ -127,3 +120,23 @@ modified logic to account for objects with no set min and max values for invento
 Updated mainscreen template to show the min and max inventory values on the parts table not the products table - this
 resulted in the main screen never showing anything for these values. G is now complete.
 Moved validation to server side functionality like the project videos described, created a  
+
+## PART_H_PROMPT:
+(G.  Modify the parts to track maximum and minimum inventory by doing the following:
+•  Add additional fields to the part entity for maximum and minimum inventory.
+•  Modify the sample inventory to include the maximum and minimum fields.
+•  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+•  Rename the file the persistent storage is saved to.
+•  Modify the code to enforce that the inventory is between or at the minimum and maximum value.)
+
+## PART_H_NOTES:
+Added validator to add product controller (line 53) and an error statement to the ValidEnufParts validator (Lines 37 - 40) 
+that provides a clear error to any user's attempting impossible edits to the inventory. The parts controller was already
+developed while working Part G using the provided videos so these error's already are functional. 
+
+## PART_I_PROMPT:
+(I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.)
+
+## PART_I_NOTES:
+I had already written these tests at an earlier point while trying to teach myself how unit testing works. The tests
+can be found on lines 104-131 of the PartTest. 
