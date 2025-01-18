@@ -35,9 +35,7 @@
 
     <div th:if="${#fields.hasAnyErrors()}">
         <ul>
-            <li th:each="err: ${fields.allErrors()}" th:text="${err}">
-
-            </li>
+            <li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li>
         </ul>
     </div>
 
