@@ -42,7 +42,7 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if(partRepository == null && productRepository == null && outsourcedPartRepository == null) {
+
             InhousePart laptopKit = new InhousePart();
             laptopKit.setName("Laptop Kit");
             laptopKit.setPrice(1100.0);
@@ -120,7 +120,7 @@ public class BootStrapData implements CommandLineRunner {
             outsourcedPartRepository.save(fmdFallenK5_7900MT);
 
             Product valueLaptop = new Product();
-            valueLaptop.setName("Performance Laptop");
+            valueLaptop.setName("Value Laptop");
             valueLaptop.setPrice(1900.0);
             valueLaptop.setInv(12);
             productRepository.save(valueLaptop);
@@ -154,7 +154,7 @@ public class BootStrapData implements CommandLineRunner {
             ultimateDesktop.setPrice(3700.0);
             ultimateDesktop.setInv(5);
             productRepository.save(ultimateDesktop);
-        }
+
 
 
         /*
