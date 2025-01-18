@@ -43,6 +43,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+            if(partRepository.count() == 0){
             InhousePart laptopKit = new InhousePart();
             laptopKit.setName("Laptop Kit");
             laptopKit.setPrice(1100.0);
@@ -155,7 +156,7 @@ public class BootStrapData implements CommandLineRunner {
             ultimateDesktop.setInv(5);
             productRepository.save(ultimateDesktop);
 
-
+            }
 
         /*
         OutsourcedPart o= new OutsourcedPart();
